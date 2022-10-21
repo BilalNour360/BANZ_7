@@ -5,6 +5,7 @@
   --blue-color: hsl(216deg 48% 26%);
   --grey-color: #6b717a;
   --border-color: #ccc;
+  --bg-color: rgb(244 246 251);
   --main-transition: 0.3s;
   --main-padding: 60px;
   --main-line-height: 1.7;
@@ -256,13 +257,28 @@ header ul ul li a:hover::before {
   color: var(--grey-color);
   margin: 0;
 }
-.landing form {
-  border: 1px solid var(--border-color);
-  padding: 2px;
-  display: flex;
-  height: 60px;
-  border-radius: 6px;
-  background-color: rgb(250 250 250);
+@media (min-width: 768px) {
+  .landing form {
+    border: 1px solid var(--border-color);
+    padding: 2px;
+    display: flex;
+    height: 60px;
+    border-radius: 6px;
+    background-color: rgb(250 250 250);
+  }
+}
+@media (max-width: 767px) {
+  .landing form {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .landing form input {
+    padding: 15px 20px;
+    border: 1px solid #ccc !important;
+    border-radius: 6px;
+  }
 }
 .landing form input[type="text"] {
   flex: 1;
@@ -281,12 +297,14 @@ header ul ul li a:hover::before {
   border: 1px solid var(--orange-color);
   color: white;
   border-radius: 6px;
-  padding: 0 30px;
+  padding: 12px;
   cursor: pointer;
   overflow: hidden;
   transition: var(--main-transition);
   position: relative;
   z-index: 1;
+  width: fit-content;
+  margin: 0 auto;
 }
 .landing form .submit:hover {
   color: var(--orange-color);
@@ -317,12 +335,14 @@ header ul ul li a:hover::before {
 /* Start feature */
 .feature {
   padding: var(--main-padding) 0;
+  background-color: var(--bg-color);
 }
 .feature .boxes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
   text-align: center;
+  justify-content: center;
+  gap: 30px;
 }
 .feature .boxes .box .image {
   position: relative;
@@ -398,6 +418,7 @@ header ul ul li a:hover::before {
 /* Start solution */
 .solution {
   padding: var(--main-padding) 0;
+  background-color: var(--bg-color);
 }
 @media (min-width: 1200px) {
   .solution .container {
@@ -467,8 +488,9 @@ header ul ul li a:hover::before {
 .pricing .container .boxes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
   text-align: center;
+  justify-content: center;
+  gap: 30px;
 }
 .pricing .boxes .box {
   border: 1px solid var(--border-color);
@@ -499,6 +521,7 @@ header ul ul li a:hover::before {
 /* Start statistics */
 .statistics {
   padding: var(--main-padding) 0;
+  background-color: var(--bg-color);
 }
 .statistics .container {
   display: grid;
@@ -549,6 +572,7 @@ header ul ul li a:hover::before {
 /* Start installation */
 .installation {
   padding: var(--main-padding) 0;
+  background-color: var(--bg-color);
 }
 .installation .container {
   display: flex;
@@ -676,11 +700,12 @@ header ul ul li a:hover::before {
 /* Start new */
 .new {
   padding: var(--main-padding) 0;
+  background-color: var(--bg-color);
 }
 .new .container {
   display: flex;
   justify-content: center;
-  row-gap: 30px;
+  gap: 30px;
 }
 @media (max-width: 768px) {
   .new .container {
@@ -688,7 +713,7 @@ header ul ul li a:hover::before {
   }
 }
 .new figure {
-  margin: 0 20px 0 0;
+  margin: 0;
 }
 .new figure .image {
   width: fit-content;
@@ -716,7 +741,7 @@ header ul ul li a:hover::before {
   border-radius: 5px;
 }
 .new figure figcaption {
-  width: 90%;
+  width: 91%;
   margin: auto;
   background-color: white;
   padding: 30px;
@@ -729,6 +754,13 @@ header ul ul li a:hover::before {
   color: var(--grey-color);
   margin-bottom: 15px;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  .new figure figcaption .date {
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+  }
 }
 .new figure figcaption .date span {
   margin-right: 20px;
@@ -753,9 +785,9 @@ header ul ul li a:hover::before {
 }
 /* End new */
 /* Start footer */
-footer {
+/* footer {
   background-color: rgb(244 246 251);
-}
+} */
 footer .foot-top {
   padding: var(--main-padding) 0;
   border-bottom: 1px solid var(--border-color);
@@ -819,12 +851,14 @@ footer .box:last-of-type form {
   justify-content: space-between;
   margin-bottom: 20px;
   padding-right: 20px;
+  background-color: var(--bg-color);
 }
 footer .box:last-of-type form input {
   padding: 20px;
   border: none;
   opacity: 1;
   flex: 1;
+  background-color: var(--bg-color);
 }
 footer .box:last-of-type form input::placeholder {
   transition: var(--main-transition);
